@@ -1,35 +1,23 @@
-/*
- * Web Starter Kit
- *
- * Multi-screen layout styles for your page. Brought to you by the
- * Web Starter Kit team.
- *
- */
-@import "components/_utils";
-
-body {
-  font-family: $fontDefault;
-  font-weight: 300;
-  box-sizing: border-box;
-  overflow: hidden;
-  width: 100%;
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+body, html {
   height: 100%;
   min-height: 100%;
-  margin: 0;
-  padding: 0;
+  background-color: #000000;
 }
+body {
 
-.cover-text {
-  font-family: $fontHighlight;
-  color: #FFFFFF;
-  margin-top: 15%;
-  text-align: center;
 }
-
-main {
-  overflow-x: hidden;
+.no-js {
+  padding-top: 106px;
 }
-
+h2 {
+  margin-top: 0;
+}
+.loading {
+  background: url('../images/ico_loading.gif') no-repeat center center;
+}
 section {
   min-width: 960px;
   opacity: 0;
@@ -37,11 +25,19 @@ section {
 .loaded section,
 .no-js section {
   opacity: 1;
-  -webkit-transition: opacity 300ms ease-out;
-  -moz-transition: opacity 300ms ease-out;
   transition: opacity 300ms ease-out;
 }
-
+main {
+  overflow-x: hidden;
+}
+#preload {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .bcg {
   background-position: center center;
   background-repeat: no-repeat;
@@ -82,119 +78,37 @@ section {
 }
 
 /* Slide 1 */
-#slide-1 .bcg { background-image:url('/images/patagonia_5.jpg') }
+#slide-1 .bcg {background-image:url('/images/patagonia_5.jpg')}
 #slide-1 .hsContent {
   bottom: 200px;
   top: auto;
 }
 
 /* Slide 2 */
-#slide-2 .bcg { background-color: #FFFFFF; }
-#slide-2 .hsContent {
-    margin-left: -450px;
-    top: auto;
-}
-#slide-2 h2 {
-    position: fixed;
-    top: 70%;
-}
-
-
-
-
-
-/* ==========================================================================
-   Parallax Scroll
-   ========================================================================== */
-body, html {
-  height: 100%;
-  min-height: 100%;
-  background-color: #000000;
-}
-body {
-
-}
-.no-js {
-  padding-top: 106px;
-}
-h2 {
-  margin-top: 0;
-}
-section {
-  min-width: 960px;
-  opacity: 0;
-}
-.loaded section,
-.no-js section {
-  opacity: 1;
-  -webkit-transition: opacity 300ms ease-out;
-  -moz-transition: opacity 300ms ease-out;
-  transition: opacity 300ms ease-out;
-}
-main {
-  overflow-x: hidden;
-}
-#preload {
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.bcg {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.hsContainer {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.hsContent {
-  max-width: 700px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-  .hsContent h2  {
-    color: #fff8de;
-    background-color: rgba(0,0,0,0.5);
-    padding: 10px 5px;
-    font-size: 35px;
-    line-height: 38px;
-    margin-bottom: 12px;
-  }
-  .hsContent p {
-    width: 400px;
-    color: #b2b2b2;
-  }
-  .hsContent a {
-    color: #b2b2b2;
-    text-decoration: underline;
-  }
-
-/* Slide 1 */
-#slide-1 .bcg { background-image:url('/images/patagonia_5.jpg') }
-#slide-1 .hsContent {
-  bottom: 200px;
-  top: auto;
-}
-
-/* Slide 2 */
-#slide-2 .bcg { background-image:url('/images/patagonia_3.jpg') }
+#slide-2 .bcg {background-image:url('/images/patagonia_3.jpg')}
 #slide-2 .hsContent {
   margin-left: -450px;
+  bottom: 200px;
   top: auto;
 }
-#slide-2 h2 {
-  position: fixed;
-  top: 70%;
+
+/* Slide 3 */
+#slide-3 .bcg {background-image:url('/images/patagonia_3.jpg')}
+#slide-3 .hsContent {
+  margin-left: -239px;
+}
+#slide-3 h2 {
+  color: #f2ead6;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Slide 4 */
+#slide-4 .bcg {background-image:url('/images/patagonia_3.jpg')}
+#slide-4 .hsContent {
+  margin-left: -450px;
+}
+#slide-4 h2 {
+  background: none;
+  padding-left: 0;
+  padding-right: 0;
 }
