@@ -114,7 +114,7 @@ gulp.task('styles:scss', function () {
 gulp.task('styles', ['styles:components', 'styles:scss', 'styles:css']);
 
 // Scan Your HTML For Assets & Optimize Them
-gulp.task('html', ['scripts:vendor'], function () {
+gulp.task('html', ['clean', 'scripts:vendor', 'images'], function () {
   return gulp.src('app/**/*.html')
     .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
 
