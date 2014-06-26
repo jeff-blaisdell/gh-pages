@@ -1,0 +1,25 @@
+{
+  "name": "gh-pages",
+  "version": "0.0.0",
+  "homepage": "http://jeff-blaisdell.github.io",
+  "authors": [
+    "Jeff <jeff.blaisdell@gmail.com>"
+  ],
+  "description": "Jeff Blaisdell's GitHub site.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18",
+    "skrollr": "~0.6.26",
+    "jquery": "~2.1.1",
+    "imagesloaded": "~3.1.8",
+    "move.js": "visionmedia/move.js#~0.3.3"
+  }
+}

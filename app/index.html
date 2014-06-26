@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Jeff Blaisdell's GitHub.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Jeff Blaisdell</title>
+
+    <!-- build:css styles/components/main.min.css -->
+    <link rel="stylesheet" href="styles/h5bp.css">
+    <link rel="stylesheet" href="styles/components/components.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="jeff-blaisdell.pages.main.app" class="loading">
+
+      <div id="preload">
+        <img src="/images/patagonia_3.jpg">
+        <img src="/images/patagonia_5.jpg">
+      </div>
+
+    <main ng-controller="MainCtrl">
+      <section id="slide-1" class="cover-slide homeSlide" style="height: 779;">
+          <div class="bcg"
+                  data-center="background-position: 50% 0px;"
+                  data-top-bottom="background-position: 50% -100px;"
+                  data-anchor-target="#slide-1">
+              <div class="hsContainer">
+                  <div class="hsContent"
+                      data-center="bottom: 200px; opacity: 1"
+                      data-top="bottom: 1200px; opacity: 0"
+                      data-anchor-target="#slide-1 h2">
+                      <h2 class="cover-text">What should we build today?</h2>
+                      <logo></logo>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section id="slide-2" class="second-slide homeSlide" style="height: 779;">
+          <div class="bcg"
+              data-center="background-position: 50% 0px;"
+              data-top-bottom="background-position: 50% -100px;"
+              data-bottom-top="background-position: 50% 100px;"
+              data-anchor-target="#slide-2">
+              <div class="hsContainer">
+                  <div class="hsContent"
+                      data-center="opacity: 1"
+                      data-center-top="opacity: 0"
+                      data--100-bottom="opacity: 0;"
+                      data-anchor-target="#slide-2">
+                      <h2>great for story telling websites.</h2>
+                      <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula nulla, tempor id bibendum ac, posuere ut ante. Donec turpis dui, cursus sit amet pellentesque eu, vehicula ac quam. Aliquam laoreet quam quis sapien pulvinar, ac iaculis urna suscipit. Mauris nec diam ac elit vehicula bibendum id tempor orci. Integer lacinia velit diam, nec varius arcu sodales vitae. Suspendisse potenti. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam scelerisque ipsum vitae arcu scelerisque, nec auctor leo gravida. Nam eget blandit orci, eu commodo lorem. Nullam et vulputate lectus.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
+    <!-- build:js scripts/main.min.js -->
+    <script src="scripts/lib/jquery.js"></script>
+    <script src="scripts/lib/move.js"></script>
+    <script src="scripts/lib/angular.js"></script>
+    <script src="scripts/lib/imagesloaded.js"></script>
+    <script src="scripts/lib/skrollr.js"></script>
+    <script src="scripts/logo-directive.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <script>
+      ( function( $ ) {
+
+        // Setup variables
+        var $window = $(window);
+        var $slide = $('.homeSlide');
+        var $body = $('body');
+
+          //FadeIn all sections
+        $body.imagesLoaded( function() {
+          setTimeout(function() {
+                // Resize sections
+                adjustWindow();
+                // Fade in sections
+              $body.removeClass('loading').addClass('loaded');
+          }, 800);
+        });
+
+        function adjustWindow(){
+
+          // Init Skrollr
+
+          // Get window size
+            winH = $window.height();
+            // Keep minimum height 550
+            if(winH <= 550) {
+              winH = 550;
+            }
+
+            // Resize our slides
+            $slide.height(winH);
+
+            // Refresh Skrollr after resizing our sections
+
+        }
+
+      } )( jQuery );
+    </script>
+
+  </body>
+</html>
