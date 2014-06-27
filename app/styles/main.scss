@@ -1,3 +1,6 @@
+@import "./components/_utils";
+
+
 /* ==========================================================================
    Begin Parallax Scroll
    @see http://ihatetomatoes.net/demos/simple-parallax-scrolling-tutorial/
@@ -10,9 +13,6 @@ body, html {
 body {
 
 }
-.no-js {
-  padding-top: 106px;
-}
 h2 {
   margin-top: 0;
 }
@@ -23,8 +23,7 @@ section {
   min-width: 960px;
   opacity: 0;
 }
-.loaded section,
-.no-js section {
+.loaded section {
   opacity: 1;
   transition: opacity 300ms ease-out;
 }
@@ -48,54 +47,48 @@ main {
   width: 100%;
 }
 
-.hsContainer {
+.slide-container {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
 
-.hsContent {
+.slide-content {
   max-width: 700px;
   position: absolute;
   left: 50%;
   top: 50%;
 }
-.hsContent h2  {
-  color: #fff8de;
-  background-color: rgba(0,0,0,0.5);
-  padding: 10px 5px;
-  font-size: 35px;
-  line-height: 38px;
-  margin-bottom: 12px;
+.slide-content h2  {
+
 }
-.hsContent p {
+.slide-content p {
   width: 400px;
   color: #b2b2b2;
 }
-.hsContent a {
+.slide-content a {
   color: #b2b2b2;
   text-decoration: underline;
 }
 
 /* Slide 1 */
-#slide-1 .bcg {background-image:url('/images/patagonia_5.jpg')}
-#slide-1 .hsContent {
-  bottom: 200px;
-  top: auto;
+#slide-1 .bcg {background-image:url('/images/patagonia_1.jpg')}
+#slide-1 .slide-content {
+  left: 35%;
 }
 
 /* Slide 2 */
-#slide-2 .bcg {background-image:url('/images/patagonia_3.jpg')}
-#slide-2 .hsContent {
+#slide-2 .bcg {background-image:url('/images/patagonia_2.jpg')}
+#slide-2 .slide-content {
   margin-left: -450px;
   bottom: 200px;
   top: auto;
 }
 
 /* Slide 3 */
-#slide-3 .bcg {background-image:url('/images/patagonia_3.jpg')}
-#slide-3 .hsContent {
+#slide-3 .bcg {background-color: #FFFFFF; }
+#slide-3 .slide-content {
   margin-left: -239px;
 }
 #slide-3 h2 {
@@ -104,8 +97,8 @@ main {
 }
 
 /* Slide 4 */
-#slide-4 .bcg {background-image:url('/images/patagonia_3.jpg')}
-#slide-4 .hsContent {
+#slide-4 .bcg {background-color: #FFFFFF; }
+#slide-4 .slide-content {
   margin-left: -450px;
 }
 #slide-4 h2 {
@@ -118,3 +111,10 @@ main {
    End Parallax Scroll Styles
    @see http://ihatetomatoes.net/demos/simple-parallax-scrolling-tutorial/
    ========================================================================== */
+
+
+
+.cover {
+  font-family: $fontHighlight;
+  color: #FFFFFF;
+}

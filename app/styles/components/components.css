@@ -1586,7 +1586,8 @@ pre {
 
 .logo-container {
   position: relative;
-  bottom: 400px;
+  bottom: 325px;
+  left: 35px;
 }
 
 .logo {
