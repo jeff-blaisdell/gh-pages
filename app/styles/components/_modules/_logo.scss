@@ -1,9 +1,21 @@
 .logo-container {
   position: relative;
-  bottom: 325px;
-  left: 35px;
+  bottom: 250px;
+  left: 0%;
 }
 
 .logo {
   position: absolute;
+}
+
+@include medium {
+    .logo-container {
+        left: 10%;
+    }
+}
+
+@include wide {
+    .logo-container {
+        left: 20%;
+    }
 }

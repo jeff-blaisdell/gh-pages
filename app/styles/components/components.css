@@ -1586,14 +1586,24 @@ pre {
 
 .logo-container {
   position: relative;
-  bottom: 325px;
-  left: 35px;
+  bottom: 250px;
+  left: 0%;
 }
 
 .logo {
   position: absolute;
 }
 
+@media only screen and (min-width: 620px) {
+  .logo-container {
+    left: 10%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .logo-container {
+    left: 20%;
+  }
+}
 /**
 *
 * Grid
