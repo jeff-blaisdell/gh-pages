@@ -5,16 +5,16 @@
 **/
 
 .related-items {
-  background-color: $colorGrayDark;
-  color: #ffffff;
-  padding-bottom: $lineHeight * 2;
-  margin-top: $lineHeight * 2;
+    background-color: $colorGrayDark;
+    color: #ffffff;
+    padding-bottom: $lineHeight * 2;
+    margin-top: $lineHeight * 2;
 
-  .list-links {
-    a {
-      color: #ffffff;
+    .list-links {
+        a {
+            color: #ffffff;
+        }
     }
-  }
 
 }
 

@@ -1,106 +1,117 @@
 @import "./components/_utils";
 
-
 /* ==========================================================================
    Begin Parallax Scroll
    @see http://ihatetomatoes.net/demos/simple-parallax-scrolling-tutorial/
    ========================================================================== */
 
 body, html {
-  height: 100%;
-  min-height: 100%;
-  background-color: #000000;
+    height: 100%;
+    min-height: 100%;
+    background-color: #000000;
 }
 
 h2 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .loading {
-  background: url('../images/ico_loading.gif') no-repeat center center;
+    background: url('../images/ico_loading.gif') no-repeat center center;
 }
 
 section {
-  min-width: 960px;
-  opacity: 0;
+    min-width: 960px;
+    opacity: 0;
 }
 
 .loaded section {
-  opacity: 1;
-  transition: opacity 300ms ease-out;
+    opacity: 1;
+    transition: opacity 300ms ease-out;
 }
 
 main {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 #preload {
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .bcg {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .slide-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .slide-content {
-  max-width: 700px;
+    max-width: 700px;
 }
 
-.slide-content h2  {
-  font-family: $fontHighlight;
+.slide-content h2 {
+    font-family: $fontHighlight;
 }
 
 /* Slide 1 */
-#slide-1 .bcg {background-image:url('/images/patagonia_1.jpg')}
+#slide-1 .bcg {
+    background-image: url('/images/patagonia_1.jpg')
+}
+
 #slide-1 .slide-content {
-  width: 400px;
-  margin: 35% 3% 0 3%;
+    width: 400px;
+    margin: 35% 3% 0 3%;
 }
 
 /* Slide 2 */
-#slide-2 .bcg {background-image:url('/images/patagonia_2.jpg')}
+#slide-2 .bcg {
+    background-image: url('/images/patagonia_2.jpg')
+}
+
 #slide-2 .slide-content {
 
 }
 
 /* Slide 3 */
-#slide-3 .bcg {background-color: #FFFFFF; }
+#slide-3 .bcg {
+    background-color: #FFFFFF;
+}
+
 #slide-3 .slide-content {
 
 }
 
 #slide-3 h2 {
-  color: #f2ead6;
-  background-color: rgba(0,0,0,0.6);
+    color: #f2ead6;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* Slide 4 */
-#slide-4 .bcg {background-color: #FFFFFF; }
+#slide-4 .bcg {
+    background-color: #FFFFFF;
+}
+
 #slide-4 .slide-content {
 
 }
 
 #slide-4 h2 {
-  background: none;
-  padding-left: 0;
-  padding-right: 0;
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* ==========================================================================
@@ -109,22 +120,26 @@ main {
    ========================================================================== */
 
 @include medium {
-  #slide-1 .bcg {background-image:url('/images/patagonia_1.jpg')}
-  #slide-1 .slide-content {
-    width: 340px;
-    margin: 35% auto;
-  }
+    #slide-1 .bcg {
+        background-image: url('/images/patagonia_1.jpg')
+    }
+    #slide-1 .slide-content {
+        width: 340px;
+        margin: 35% auto;
+    }
 }
 
 @include wide {
-  #slide-1 .bcg {background-image:url('/images/patagonia_1.jpg')}
-  #slide-1 .slide-content {
-    width: 540px;
-    margin: 35% auto;
-  }
+    #slide-1 .bcg {
+        background-image: url('/images/patagonia_1.jpg')
+    }
+    #slide-1 .slide-content {
+        width: 540px;
+        margin: 35% auto;
+    }
 }
 
 .cover {
-  font-family: $fontHighlight;
-  color: #FFFFFF;
+    font-family: $fontHighlight;
+    color: #FFFFFF;
 }

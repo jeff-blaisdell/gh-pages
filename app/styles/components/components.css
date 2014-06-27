@@ -1594,6 +1594,12 @@ pre {
   position: absolute;
 }
 
+.logo-dot {
+  position: absolute;
+  top: 125px;
+  left: 4px;
+}
+
 @media only screen and (min-width: 620px) {
   .logo-container {
     left: 10%;

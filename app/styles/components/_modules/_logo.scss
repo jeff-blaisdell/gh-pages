@@ -1,11 +1,17 @@
 .logo-container {
-  position: relative;
-  bottom: 250px;
-  left: 0%;
+    position: relative;
+    bottom: 250px;
+    left: 0%;
 }
 
 .logo {
-  position: absolute;
+    position: absolute;
+}
+
+.logo-dot {
+    position: absolute;
+    top: 125px;
+    left: 4px;
 }
 
 @include medium {
