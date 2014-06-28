@@ -27,6 +27,7 @@ var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var es = require('event-stream');
 var _ = require('lodash');
+var runSequence = require('run-sequence');
 var reload = browserSync.reload;
 
 
@@ -54,9 +55,31 @@ gulp.task('scripts:vendor', function () {
   return es.merge.apply(null, streams);
 });
 
+// Prepare Angular template cache.
+gulp.task('scripts:views', function () {
+
+  var streams = _.map(venderScripts, function(vendor) {
+    var name = _.keys(vendor);
+    var scripts = vendor[name];
+    var target = 'app/scripts'
+
+    return gulp.src('app/scripts/**/*.html')
+        .pipe($.minifyHtml())
+        .pipe($.angularTemplatecache({
+            standalone: true,
+            module:     'jeff-blaisdell.templates',
+            root: 'jeff-blaisdell',
+            filename:   'templates.js'
+        }))
+        .pipe(gulp.dest(target));
+  });
+
+  return es.merge.apply(null, streams);
+});
+
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src(['app/scripts/**/*.js', '!app/scripts/lib/**/*.js', '!app/scripts/templates.js'])
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.jshint.reporter('fail'))
@@ -114,7 +137,7 @@ gulp.task('styles:scss', function () {
 gulp.task('styles', ['styles:components', 'styles:scss', 'styles:css']);
 
 // Scan Your HTML For Assets & Optimize Them
-gulp.task('html', ['clean', 'scripts:vendor', 'images'], function () {
+gulp.task('html', [], function () {
   return gulp.src('app/**/*.html')
     .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
 
@@ -129,7 +152,7 @@ gulp.task('html', ['clean', 'scripts:vendor', 'images'], function () {
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({ html: ['app/index.html','app/styleguide/index.html'] })))
+    //.pipe($.if('*.css', $.uncss({ html: ['app/index.html','app/styleguide/index.html'] })))
     .pipe($.useref.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
@@ -139,6 +162,13 @@ gulp.task('html', ['clean', 'scripts:vendor', 'images'], function () {
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
+});
+
+gulp.task('build', ['clean'], function () {
+    runSequence(
+        ['scripts:vendor', 'scripts:views', 'images'],
+        'html'
+    );
 });
 
 // Clean Output Directory
@@ -159,7 +189,7 @@ gulp.task('serve', function () {
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{css,scss}'], ['styles']);
   gulp.watch(['.tmp/styles/**/*.css'], reload);
-  //gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js', '!app/scripts/lib/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], ['images']);
 });
 
@@ -175,6 +205,6 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   // free (no API key) tier. You can use a Google
   // Developer API key if you have one. See
   // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-  url: 'https://example.com',
+  url: 'https://jeff-blaisdell.github.io',
   strategy: 'mobile'
 }));

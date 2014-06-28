@@ -2,19 +2,13 @@
     'use strict';
 
     var module = angular.module('jeff-blaisdell.components.logo', [
+        'jeff-blaisdell.templates'
     ]);
 
     module.directive('logo', function ($timeout) {
         return {
             restrict: 'E',
-            template: '<div class="logo-container">' +
-                          '<img class="logo logo-1-1" src="images/jb-logo.svg" height="200" width="200">' +
-                          '<img class="logo logo-1-2" src="images/jb-logo.svg" height="200" width="200">' +
-                          '<img class="logo logo-1-3" src="images/jb-logo.svg" height="200" width="200">' +
-                          '<img class="logo-dot logo-dot-1-3" src="images/jb-logo-dot.svg" height="200" width="200">' +
-                          '<img class="logo-dot logo-dot-2-3" src="images/jb-logo-dot.svg" height="200" width="200">' +
-                          '<img class="logo-dot logo-dot-3-3" src="images/jb-logo-dot.svg" height="200" width="200">' +
-                      '</div>',
+            templateUrl: 'jeff-blaisdell/templates/logo.html',
             scope: {
             },
             link: function () {
@@ -52,7 +46,7 @@
                 $timeout(animate, 1500);
 
             }
-        }
+        };
     });
 
 })();

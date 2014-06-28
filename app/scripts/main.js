@@ -7,7 +7,7 @@
     ]);
 
     module.controller('MainCtrl', function ($scope, $log) {
-        $log.info('Loading Main Controller.')
+        $log.info('Loading Main Controller.');
     });
 
 })();
