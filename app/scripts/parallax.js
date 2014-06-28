@@ -42,8 +42,6 @@
           // Refresh Skrollr after resizing our sections
 
         }
-
-
       }
     };
   });
