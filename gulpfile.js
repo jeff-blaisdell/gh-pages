@@ -32,11 +32,11 @@ var reload = browserSync.reload;
 
 
 var venderScripts = [
-  { 'angular': [ 'bower_components/angular/angular.js' ] },
-  { 'jquery': [ 'bower_components/jquery/dist/jquery.js' ] },
-  { 'skrollr': [ 'bower_components/skrollr/src/skrollr.js' ] },
-  { 'imagesloaded': [ 'bower_components/imagesloaded/imagesloaded.pkgd.js' ] },
-  { 'move': [ 'bower_components/move.js/move.js' ] }
+  { 'angular': [ 'bower_components/angular/angular.min.js' ] },
+  { 'jquery': [ 'bower_components/jquery/dist/jquery.min.js' ] },
+  { 'skrollr': [ 'bower_components/skrollr/dist/skrollr.min.js' ] },
+  { 'imagesloaded': [ 'bower_components/imagesloaded/imagesloaded.pkgd.min.js' ] },
+  { 'move': [ 'bower_components/move.js/move.min.js' ] }
 ];
 
 // Prepare vendor scripts.
@@ -145,20 +145,20 @@ gulp.task('html', [], function () {
     .pipe($.if('*.js', $.ngmin()))
 
     // Concatenate And Minify JavaScript
-    .pipe($.if('*.js', $.uglify()))
+    //.pipe($.if('*.js', $.uglify()))
 
     // Concatenate And Minify Styles
     .pipe($.if('*.css', $.csso()))
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
-    //.pipe($.if('*.css', $.uncss({ html: ['app/index.html','app/styleguide/index.html'] })))
+    .pipe($.if('*.css', $.uncss({ html: ['app/index.html','app/styleguide/index.html'] })))
     .pipe($.useref.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
-    .pipe($.minifyHtml())
+    .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
