@@ -22,7 +22,7 @@
             adjustWindow();
             // Fade in sections
             $body.removeClass('loading').addClass('loaded');
-          }, 800);
+          }, 1500);
         });
 
         function adjustWindow(){

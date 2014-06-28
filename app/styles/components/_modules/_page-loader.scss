@@ -1,44 +1,63 @@
-$size: 2.5em;
-
 .loaded .page-loader {
   display: none;
 }
 
 .loading .page-loader {
-    display: flex;
+    display: block;
 }
 
 .page-loader {
-  //position: absolute;
-  //top: calc(50% - #{$size / 2});
-  //left: calc(50% - #{$size / 2});
+    display: block;
+    position: absolute;
+    top:50%;
+    margin-top: -20px;
+    left:50%;
+    margin-left: -20px;
+    width:10px;
+    height:40px;
+    border:1px solid #fff;
+  outline:4px solid #000;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.15);
+    overflow: hidden;
 }
 
-$bars: 5; $size: 25px; $fBlue: #000000;
-$ease: .3s ease-in-out; $delay: .1s;
-.page-loader {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 30px; height: $size;
-  margin: auto;
-  display: flex;
-  flex-flow: row no-wrap;
-  justify-content: center;
-  align-items: center;
-  &.loaded {
-    .bar {
-      width: 5px; height: 5px;
-      margin-right: 1px;
-      border-radius: 5px;
-      background: $fBlue;
-      flex: 1 5px;
-      &:last-child { margin: 0; }
-      @for $i from 1 through $bars {
-        &:nth-child( #{$i} ) {
-          animation: load $ease $delay * $i infinite alternate;
-        }
-      }
+.page-loader:after{
+    content:"";
+    position: absolute;
+    border-radius: 10px;
+    padding:5px;
+    left:50%;
+    margin-left: -5px;
+    bottom: 100%;
+    background: #000;
+    -webkit-animation: load 4s linear infinite;
+    box-shadow: 0 -40px 0 0 #000, 0 -40px 0 0 #000, 0 -40px 0 0 #000;
+}
+
+@-webkit-keyframes load
+{
+    0% {
+        bottom: 100%;
+        box-shadow: 0 -40px 0 0 #000, 0 -40px 0 0 #000, 0 -40px 0 0 #000;
     }
-  }
+    28% {
+        bottom: 0;
+        box-shadow: 0 -40px 0 0 #000, 0 -40px 0 0 #000, 0 -40px 0 0 #000;
+    }
+    50% {
+        bottom:0;
+        box-shadow: 0 -10px 0 0 #000, 0 -40px 0 0 #000, 0 -40px 0 0 #000;
+    }
+    64% {
+        bottom:0;
+        box-shadow: 0 -10px 0 0 #000, 0 -20px 0 0 #000, 0 -40px 0 0 #000;
+    }
+    71% {
+        bottom:0;
+        box-shadow: 0 -10px 0 0 #000, 0 -20px 0 0 #000, 0 -30px 0 0 #000;
+    }
+    100% {
+        bottom:-40px;
+        box-shadow: 0 -10px 0 0 #000, 0 -20px 0 0 #000, 0 -30px 0 0 #000;
+    }
 }
-@keyframes load { 100% { height: $size; } }
