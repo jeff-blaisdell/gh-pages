@@ -43,7 +43,7 @@
                         .end(animateDots);
                 }
 
-                $timeout(animate, 1500);
+                $timeout(animate, 2000);
 
             }
         };

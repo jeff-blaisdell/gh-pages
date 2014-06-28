@@ -5,92 +5,40 @@ $size: 2.5em;
 }
 
 .loading .page-loader {
-  display: block;
+    display: flex;
 }
 
+.page-loader {
+  //position: absolute;
+  //top: calc(50% - #{$size / 2});
+  //left: calc(50% - #{$size / 2});
+}
+
+$bars: 5; $size: 25px; $fBlue: #000000;
+$ease: .3s ease-in-out; $delay: .1s;
 .page-loader {
   position: absolute;
-  top: calc(50% - #{$size / 2});
-  left: calc(50% - #{$size / 2});
-}
-
-.page-loader {
-  width: 40px;
-  height: 40px;
-  transform:rotate(45deg);
-  animation:page-loader-ani1 3s ease-in-out infinite;
-}
-.page-loader i{
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  border-radius: 50%;
-  position:absolute;
-
-}
-.page-loader i:nth-child(1){
-  background: #ff5954;
-  transform:translate(0,50px);
-  animation:page-loader-ani2 3s ease-in-out infinite;
-}
-.page-loader i:nth-child(2){
-  background: #1f4c59;
-  transform:rotate(90deg) translate(0,50px);
-  animation:page-loader-ani3 3s ease-in-out infinite;
-}
-.page-loader i:nth-child(3){
-  background: #00b39f;
-  transform:rotate(180deg) translate(0,50px);
-  animation:page-loader-ani4 3s ease-in-out infinite;
-}
-.page-loader i:nth-child(4){
-  background: #ffb364;
-  transform:rotate(270deg) translate(0,50px);
-  animation:page-loader-ani5 3s ease-in-out infinite;
-}
-@keyframes page-loader-ani1{
-  25%{
-    transform:rotate(135deg);
-  }
-  50%{
-    transform:rotate(225deg);
-  }
-  75%{
-    transform:rotate(315deg);
-  }
-  100%{
-    transform:rotate(405deg);
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 30px; height: $size;
+  margin: auto;
+  display: flex;
+  flex-flow: row no-wrap;
+  justify-content: center;
+  align-items: center;
+  &.loaded {
+    .bar {
+      width: 5px; height: 5px;
+      margin-right: 1px;
+      border-radius: 5px;
+      background: $fBlue;
+      flex: 1 5px;
+      &:last-child { margin: 0; }
+      @for $i from 1 through $bars {
+        &:nth-child( #{$i} ) {
+          animation: load $ease $delay * $i infinite alternate;
+        }
+      }
+    }
   }
 }
-@keyframes page-loader-ani2{
-  17.5%,25%,42.5%,50%,67.5%,75%,92.5%,100%{
-    transform:translate(0,50px);
-  }
-  12.5%,37.5%,62.5%,87.5%{
-    transform:translate(0,35px);
-  }
-}
-@keyframes page-loader-ani3{
-  17.5%,25%,42.5%,50%,67.5%,75%,92.5%,100%{
-    transform:rotate(90deg) translate(0,50px);
-  }
-  12.5%,37.5%,62.5%,87.5%{
-    transform:rotate(90deg) translate(0,35px);
-  }
-}
-@keyframes page-loader-ani4{
-  17.5%,25%,42.5%,50%,67.5%,75%,92.5%,100%{
-    transform:rotate(180deg) translate(0,50px);
-  }
-  12.5%,37.5%,62.5%,87.5%{
-    transform:rotate(180deg) translate(0,35px);
-  }
-}
-@keyframes page-loader-ani5{
-  17.5%,25%,42.5%,50%,67.5%,75%,92.5%,100%{
-    transform:rotate(270deg) translate(0,50px);
-  }
-  12.5%,37.5%,62.5%,87.5%{
-    transform:rotate(270deg) translate(0,35px);
-  }
-}
+@keyframes load { 100% { height: $size; } }

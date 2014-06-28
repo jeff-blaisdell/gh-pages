@@ -10,8 +10,8 @@
             restrict: 'E',
             templateUrl: 'jeff-blaisdell/templates/page-loader.html',
             scope: {},
-            link: function () {
-
+            link: function (scope, elem) {
+                elem.find('.page-loader').delay(500).addClass('loaded',500,'linear');
             }
         };
     });
