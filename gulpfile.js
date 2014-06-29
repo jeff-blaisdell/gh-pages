@@ -189,6 +189,7 @@ gulp.task('serve', function () {
   gulp.watch(['app/styles/**/*.{css,scss}'], ['styles']);
   gulp.watch(['.tmp/styles/**/*.css'], reload);
   gulp.watch(['app/scripts/**/*.js', '!app/scripts/lib/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/templates**/*.html'], ['scripts:views']);
   gulp.watch(['app/images/**/*'], ['images']);
 });
 

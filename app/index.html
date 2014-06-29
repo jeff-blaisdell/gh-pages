@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Jeff Blaisdell's GitHub.">
@@ -8,65 +8,85 @@
     <title>Jeff Blaisdell</title>
 
     <!-- build:css styles/components/main.min.css -->
+    <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/h5bp.css">
     <link rel="stylesheet" href="styles/components/components.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-  </head>
-  <body ng-app="jeff-blaisdell.pages.main.app" class="loading">
+</head>
+<body ng-app="jeff-blaisdell.pages.main.app" class="loading">
 
-      <div id="preload">
-        <img src="/images/patagonia_1.jpg">
-        <img src="/images/patagonia_2.jpg">
-      </div>
+<div id="preload">
+    <img src="/images/patagonia_1.jpg">
+    <img src="/images/patagonia_2.jpg">
+</div>
 
-    <main ng-controller="MainCtrl">
+<main ng-controller="MainCtrl">
 
-      <page-loader></page-loader>
+    <page-loader></page-loader>
 
-      <parallax>
+    <parallax>
 
         <section id="slide-1" class="slide">
-          <div class="bcg">
-            <div class="slide-container">
-              <div class="slide-content cover-slide-content">
+            <div class="bcg">
+                <div class="slide-container">
+                    <div class="slide-content cover-slide-content">
                 <span class="cover">
                   <logo></logo>
                   <h2>What will we create today?</h2>
                 </span>
-              </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </section>
 
         <section id="slide-2" class="slide">
-          <div class="bcg">
-            <div class="slide-container">
-              <div class="slide-content">
-                <h2>great for story telling websites.</h2>
-              </div>
+            <div class="bcg">
+                <div class="slide-container">
+                    <div class="slide-content">
+
+                        <div class="about-me">
+
+                                <div class="g-wide--3 g-medium--last g-wide--2">
+                                    <h2 class="subsection-title">A little about me...</h2>
+                                    <p>Hi!  My name is Jeff.  I'm a Software Engineer living in the Twin Cities.
+                                        I'm passionate about technology, and finding creative ways to use it to make the world around us a better place.</p>
+                                    <p>Much of my technical interest is focused around the Web, and I enjoy building applications with Groovy, Java and Angular JS.  I always jump at the chance to play with something new!</p>
+                                </div>
+
+                        </div>
+                        <div class="quote">
+
+                                <blockquote class="quote__content g-medium--1 g-medium--push-2 g-medium--last g-wide--2 g-wide--push-2 g-wide--last">
+                                    Never before in history has innovation offered promise of so much to so many in so
+                                    short a time.
+                                    <p>Bill Gates</p>
+                                </blockquote>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </section>
 
-      </parallax>
+    </parallax>
 
-    </main>
+</main>
 
-    <!-- build:js scripts/main.min.js -->
-    <script src="scripts/lib/jquery.js"></script>
-    <script src="scripts/lib/move.js"></script>
-    <script src="scripts/lib/angular.js"></script>
-    <script src="scripts/lib/imagesloaded.js"></script>
-    <script src="scripts/lib/skrollr.js"></script>
-    <script src="scripts/templates.js"></script>
-    <script src="scripts/page-loader.js"></script>
-    <script src="scripts/parallax.js"></script>
-    <script src="scripts/logo.js"></script>
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
+<!-- build:js scripts/main.min.js -->
+<script src="scripts/lib/jquery.js"></script>
+<script src="scripts/lib/move.js"></script>
+<script src="scripts/lib/angular.js"></script>
+<script src="scripts/lib/imagesloaded.js"></script>
+<script src="scripts/lib/skrollr.js"></script>
+<script src="scripts/templates.js"></script>
+<script src="scripts/page-loader.js"></script>
+<script src="scripts/parallax.js"></script>
+<script src="scripts/logo.js"></script>
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 
 
-  </body>
+</body>
 </html>
