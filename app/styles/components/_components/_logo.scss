@@ -1,0 +1,26 @@
+.logo-container {
+  position: relative;
+  bottom: 250px;
+  left: 0%;
+}
+
+.logo {
+  position: absolute;
+}
+
+.logo-dot {
+  position: absolute;
+  top: 125px;
+  left: 4px;
+}
+
+@media only screen and (min-width: 620px) {
+  .logo-container {
+    left: 10%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .logo-container {
+    left: 20%;
+  }
+}

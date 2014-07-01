@@ -55,12 +55,7 @@ main {
 }
 
 .slide-content {
-    max-width: 700px;
-}
-
-.slide-content h2 {
-    font-family: $fontHighlight;
-    text-align: center;
+    padding: 25px 80px;
 }
 
 /* Slide 1 */
@@ -71,6 +66,12 @@ main {
 #slide-1 .slide-content {
     width: 315px;
     margin: 35% 3% 0 3%;
+    padding: 0px;
+
+    h2 {
+        font-family: $fontHighlight;
+        text-align: center;
+    }
 }
 
 /* Slide 2 */
@@ -79,7 +80,15 @@ main {
 }
 
 #slide-2 .slide-content p {
-    margin: 0px 25px;
+
+}
+
+#slide-2 {
+    .editorial-header__excerpt {
+        padding: 0 !important;
+        margin-bottom: 25px;
+        text-align: center;
+    }
 }
 
 /* Slide 3 */
@@ -139,4 +148,13 @@ main {
 .cover {
     font-family: $fontHighlight;
     color: #FFFFFF;
+}
+
+.me {
+
+    text-align: center;
+    .gravitar {
+        width: 240px;
+        border-radius: 120px;
+    }
 }
