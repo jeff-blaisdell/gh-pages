@@ -8,6 +8,7 @@
     module.directive('logo', function ($timeout) {
         return {
             restrict: 'E',
+            replace: true,
             templateUrl: 'jeff-blaisdell/templates/logo.html',
             scope: {
             },

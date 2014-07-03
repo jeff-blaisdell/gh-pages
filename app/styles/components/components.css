@@ -1677,20 +1677,20 @@ pre {
     box-shadow: 0 -10px 0 0 #000, 0 -20px 0 0 #000, 0 -30px 0 0 #000;
   }
 }
-.social-links, .social-links li {
+.social-links {
+  text-align: center;
+}
+.social-links li {
+  display: inline;
+  width: 50px;
   list-style-type: none;
   padding: 0px;
   margin: 1px;
 }
-
-.social-links li {
-  float: left;
-  width: 50px;
+.social-links li a {
+  text-decoration: none;
 }
-
 .social-links .social-link {
-  position: relative;
-  top: 1px;
   display: inline-block;
   background: url("/images/social-icons.png") no-repeat;
   padding: 0px;
@@ -1720,16 +1720,6 @@ pre {
   background-position: -377px -8px;
 }
 
-@media only screen and (min-width: 620px) {
-  .social-links, .social-links li {
-    margin: 6px;
-  }
-}
-@media only screen and (min-width: 800px) {
-  .social-links, .social-links li {
-    margin: 12px;
-  }
-}
 /**
 *
 * Grid
