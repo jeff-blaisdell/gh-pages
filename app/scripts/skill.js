@@ -5,7 +5,7 @@
         'jeff-blaisdell.templates'
     ]);
 
-    module.directive('skill', function () {
+    module.directive('skill', function ($window) {
         return {
             restrict: 'E',
             replace: true,
@@ -16,13 +16,17 @@
             },
             link: function (scope, elem) {
 
-                var percentage = parseInt(scope.percentage) / 100;
-                var width = elem.find('.meter').prop('offsetWidth');
-                var calculatedWidth = Math.ceil(width * percentage);
+                function setWidth() {
+                    var percentage = parseInt(scope.percentage) / 100;
+                    var width = elem.find('.meter').prop('offsetWidth');
+                    var calculatedWidth = Math.ceil(width * percentage);
+                    elem.find('.percentage-bar').css('width', calculatedWidth + 'px');
+                }
 
-                console.log(['width', width, 'percentage', percentage, 'calc', calculatedWidth]);
-                elem.find('.percentage-bar').css('width', calculatedWidth + 'px');
 
+                angular.element($window).bind('resize', setWidth);
+
+                setWidth();
             }
         };
     });
