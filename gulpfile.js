@@ -133,6 +133,12 @@ gulp.task('styles:scss', function () {
     .pipe($.size({title: 'styles:scss'}));
 });
 
+// Optimize Images
+gulp.task('favicon', function () {
+    return gulp.src('app/favicon.ico')
+        .pipe(gulp.dest('dist'));
+});
+
 // Output Final CSS Styles
 gulp.task('styles', ['styles:components', 'styles:scss', 'styles:css']);
 
@@ -165,7 +171,7 @@ gulp.task('html', [], function () {
 
 gulp.task('build', ['clean'], function () {
     runSequence(
-        ['scripts:vendor', 'scripts:views', 'images'],
+        ['scripts:vendor', 'scripts:views', 'images', 'favicon'],
         'html'
     );
 });
