@@ -1705,19 +1705,22 @@ pre {
   background-position: -128px -9px;
 }
 .social-links .social-link.linked-in {
-  background-position: -255px -8px;
+  background-position: -255px -9px;
 }
 .social-links .social-link.blogger {
   background-position: -194px -9px;
 }
 .social-links .social-link.twitter {
-  background-position: -11px -8px;
+  background-position: -11px -9px;
 }
 .social-links .social-link.facebook {
-  background-position: -70px -8px;
+  background-position: -70px -9px;
 }
 .social-links .social-link.about-me {
-  background-position: -377px -8px;
+  background-position: -377px -9px;
+}
+.social-links .social-link.medium {
+  background-position: -438px -10px;
 }
 
 .facts {

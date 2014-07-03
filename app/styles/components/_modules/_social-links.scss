@@ -32,7 +32,7 @@
         }
 
         &.linked-in {
-            background-position: -255px -8px;
+            background-position: -255px -9px;
         }
 
         &.blogger {
@@ -40,15 +40,19 @@
         }
 
         &.twitter {
-            background-position: -11px -8px;
+            background-position: -11px -9px;
         }
 
         &.facebook {
-            background-position: -70px -8px;
+            background-position: -70px -9px;
         }
 
         &.about-me {
-            background-position: -377px -8px;
+            background-position: -377px -9px;
+        }
+
+        &.medium {
+            background-position: -438px -10px;
         }
     }
 }
