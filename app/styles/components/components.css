@@ -1720,6 +1720,32 @@ pre {
   background-position: -377px -8px;
 }
 
+.facts dl, .facts dd, .facts dt {
+  padding: 0;
+  margin: 0;
+}
+.facts dt {
+  font-weight: 400;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+}
+.facts dd {
+  margin-bottom: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.facts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.facts .fact-group {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 800px) {
+  .facts .fact-group {
+    display: block;
+  }
+}
 /**
 *
 * Grid

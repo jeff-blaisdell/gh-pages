@@ -158,41 +158,7 @@ main {
     }
 }
 
-dl, dd, dt {
-    padding: 0;
-    margin: 0;
-}
-
-.profile dt {
-    font-weight: 400;
-    font-family: $fontHighlight;
-}
-
-.profile dd {
-    margin-bottom: 20px;
-    font-family: $fontDefault;
-}
-
-.profile ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.profile {
-    .profile-group {
-        display: inline-block;
-    }
-}
-
-@include medium {
-
-}
-
-@include wide {
-    .profile {
-        .profile-group {
-            display: block;
-        }
-    }
+.about-me {
+    position: relative;
+    height: 800px;
 }

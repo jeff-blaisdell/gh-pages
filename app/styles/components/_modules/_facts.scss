@@ -1,0 +1,38 @@
+.facts {
+    dl, dd, dt {
+        padding: 0;
+        margin: 0;
+    }
+
+    dt {
+        font-weight: 400;
+        font-family: $fontHighlight;
+    }
+
+    dd {
+        margin-bottom: 20px;
+        font-family: $fontDefault;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .fact-group {
+        display: inline-block;
+    }
+}
+
+@include medium {
+
+}
+
+@include wide {
+    .facts {
+        .fact-group {
+            display: block;
+        }
+    }
+}
