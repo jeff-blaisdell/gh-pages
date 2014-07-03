@@ -1,4 +1,8 @@
 .facts {
+
+    text-align: center;
+    margin: 20px;
+
     dl, dd, dt {
         padding: 0;
         margin: 0;
@@ -14,25 +18,27 @@
         font-family: $fontDefault;
     }
 
-    ul {
+    ul, li {
         margin: 0;
         padding: 0;
-        list-style: none;
+        list-style-type: none;
     }
 
     .fact-group {
-        display: inline-block;
+
     }
 }
 
 @include medium {
-
+    .facts {
+        text-align: center;
+        margin: 20px;
+    }
 }
 
 @include wide {
     .facts {
-        .fact-group {
-            display: block;
-        }
+        text-align: left;
+        margin: 0;
     }
 }

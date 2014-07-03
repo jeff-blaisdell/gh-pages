@@ -18,7 +18,6 @@
 
 <div id="preload">
     <img src="/images/patagonia_1.jpg">
-    <img src="/images/patagonia_2.jpg">
 </div>
 
 <main ng-controller="MainCtrl">
@@ -31,10 +30,10 @@
             <div class="bcg">
                 <div class="slide-container">
                     <div class="slide-content cover-slide-content">
-                <span class="cover">
-                  <logo></logo>
-                  <h2>What will we create today?</h2>
-                </span>
+                        <span class="cover">
+                          <logo></logo>
+                          <h2>What will we create today?</h2>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -44,30 +43,28 @@
             <div class="container clear">
                 <div class="page-header">
                     <h1 class="xxlarge text-divider">About Me</h1>
-                </div>
-                <div class="g-wide--1 g-medium--full">
-                    <h3><strong class="subsection-number">#A Few Facts</strong></h3>
-                    <facts></facts>
-                </div>
-                <div class="g-wide--2 me">
-                    <img class="gravitar" src="http://www.gravatar.com/avatar/5b993ad7e7dfa0122e7405e312c6dfdf?s=400">
                     <h2>Jeff Blaisdell</h2>
                 </div>
-                <div class="g-wide--1 g-wide--last g-medium--full">
-                    <h3><strong class="subsection-number">#Skills</strong></h3>
-                    <skill name="JavaScript" percentage="80"></skill>
-                    <skill name="HTML / CSS" percentage="78"></skill>
-                    <skill name="Java" percentage="82"></skill>
-                    <skill name="Groovy" percentage="75"></skill>
+                <div class="g-wide--1 g-medium--2 g-medium--full box">
+                    <h3>Facts</h3>
+                    <facts></facts>
                 </div>
-                <div class="g-wide--1 g-medium--full">
+                <div class="g-wide--2 me box">
+                    <img class="gravitar" src="http://www.gravatar.com/avatar/5b993ad7e7dfa0122e7405e312c6dfdf?s=400">
                 </div>
-                <div class="g-wide--2 g-medium--full">
-                    <social-links></social-links>
-                </div>
-                <div class="g-wide--1 g-wide--last g-medium--full">
+                <div class="g-wide--1 g-wide--last g-medium--full box">
+                    <h3>Skills</h3>
+                    <div class="skills">
+                        <skill name="JavaScript" percentage="80"></skill>
+                        <skill name="HTML / CSS" percentage="78"></skill>
+                        <skill name="Java" percentage="82"></skill>
+                        <skill name="Groovy" percentage="75"></skill>
+                    </div>
                 </div>
             </div>
+            <footer>
+                <social-links></social-links>
+            </footer>
         </section>
 
     </parallax>
