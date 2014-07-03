@@ -6,7 +6,8 @@
         'jeff-blaisdell.components.facts',
         'jeff-blaisdell.components.social-links',
         'jeff-blaisdell.components.parallax',
-        'jeff-blaisdell.components.page-loader'
+        'jeff-blaisdell.components.page-loader',
+        'jeff-blaisdell.components.skill'
     ]);
 
     module.controller('MainCtrl', function ($scope, $log) {

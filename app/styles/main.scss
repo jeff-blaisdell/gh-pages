@@ -162,3 +162,31 @@ main {
     position: relative;
     height: 800px;
 }
+
+.skill {
+
+    .name {
+        float: left;
+    }
+
+    .percentage {
+        float: right;
+    }
+
+    .meter {
+        height: 34px;  /* Can be anything */
+        position: relative;
+        background: #fff;
+        border: 1px solid #ececec;
+        margin-bottom: 5px;
+    }
+
+    .meter > span {
+        display: block;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        background: $colorOrange;
+    }
+
+}
