@@ -16,7 +16,6 @@ h2 {
 }
 
 section {
-    min-width: 960px;
     opacity: 0;
 }
 
@@ -65,7 +64,7 @@ main {
 
 #slide-1 .slide-content {
     width: 315px;
-    margin: 35% 3% 0 3%;
+    margin: 80% 3% 0 3%;
     padding: 0px;
 
     h2 {
@@ -156,5 +155,44 @@ main {
     .gravitar {
         width: 240px;
         border-radius: 120px;
+    }
+}
+
+dl, dd, dt {
+    padding: 0;
+    margin: 0;
+}
+
+.profile dt {
+    font-weight: 400;
+    font-family: $fontHighlight;
+}
+
+.profile dd {
+    margin-bottom: 20px;
+    font-family: $fontDefault;
+}
+
+.profile ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profile {
+    .profile-group {
+        display: inline-block;
+    }
+}
+
+@include medium {
+
+}
+
+@include wide {
+    .profile {
+        .profile-group {
+            display: block;
+        }
     }
 }

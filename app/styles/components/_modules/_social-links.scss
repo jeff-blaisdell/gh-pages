@@ -1,0 +1,62 @@
+.social-links, .social-links li {
+    list-style-type: none;
+    padding: 0px;
+    margin: 1px;
+}
+
+.social-links li {
+    float: left;
+    width: 50px;
+}
+
+.social-links .social-link {
+
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    background: url('/images/social-icons.png') no-repeat;
+    padding: 0px;
+    margin: 0px;
+    width: 46px;
+    height: 46px;
+
+    &.google-plus {
+        background-position: -316px -9px;
+    }
+
+    &.github {
+        background-position: -128px -9px;
+    }
+
+    &.linked-in {
+        background-position: -255px -8px;
+    }
+
+    &.blogger {
+        background-position: -194px -9px;
+    }
+
+    &.twitter {
+        background-position: -11px -8px;
+    }
+
+    &.facebook {
+        background-position: -70px -8px;
+    }
+
+    &.about-me {
+        background-position: -377px -8px;
+    }
+}
+
+@include medium {
+    .social-links, .social-links li {
+        margin: 6px;
+    }
+}
+
+@include wide {
+    .social-links, .social-links li {
+        margin: 12px;
+    }
+}
