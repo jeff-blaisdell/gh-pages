@@ -113,7 +113,8 @@ gulp.task('styles:components', function () {
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
-      loadPath: ['app/styles/components']
+      loadPath: ['app/styles/components'],
+      sourcemap: true
     }))
     .pipe($.autoprefixer('last 1 version'))
     .pipe(gulp.dest('app/styles/components'))
@@ -126,7 +127,8 @@ gulp.task('styles:scss', function () {
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
-      loadPath: ['app/styles']
+      loadPath: ['app/styles'],
+      sourcemap: true
     }))
     .pipe($.autoprefixer('last 1 version'))
     .pipe(gulp.dest('.tmp/styles'))
@@ -192,7 +194,7 @@ gulp.task('serve', function () {
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{css,scss}'], ['styles']);
+  gulp.watch(['app/styles/**/*.scss'], ['styles']);
   gulp.watch(['.tmp/styles/**/*.css'], reload);
   gulp.watch(['app/scripts/**/*.js', '!app/scripts/lib/**/*.js'], ['jshint']);
   gulp.watch(['app/scripts/templates**/*.html'], ['scripts:views']);
