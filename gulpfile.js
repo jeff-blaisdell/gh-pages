@@ -107,27 +107,13 @@ gulp.task('styles:css', function () {
     .pipe($.size({title: 'styles:css'}));
 });
 
-// Compile Sass For Style Guide Components (app/styles/components)
-gulp.task('styles:components', function () {
-  return gulp.src('app/styles/components/components.scss')
-    .pipe($.rubySass({
-      style: 'expanded',
-      precision: 10,
-      loadPath: ['app/styles/components'],
-      sourcemap: true
-    }))
-    .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('app/styles/components'))
-    .pipe($.size({title: 'styles:components'}));
-});
-
 // Compile Any Other Sass Files You Added (app/styles)
 gulp.task('styles:scss', function () {
-  return gulp.src(['app/styles/**/*.scss', '!app/styles/components/components.scss'])
+  return gulp.src(['app/styles/**/*.scss'])
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
-      loadPath: ['app/styles'],
+      loadPath: ['app/styles', 'app/styles/components'],
       sourcemap: true
     }))
     .pipe($.autoprefixer('last 1 version'))
@@ -142,7 +128,7 @@ gulp.task('favicon', function () {
 });
 
 // Output Final CSS Styles
-gulp.task('styles', ['styles:components', 'styles:scss', 'styles:css']);
+gulp.task('styles', ['styles:scss', 'styles:css']);
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', [], function () {
@@ -163,7 +149,7 @@ gulp.task('html', [], function () {
     .pipe($.useref.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
-    .pipe($.replace('components/components.css', 'components/main.min.css'))
+    //.pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
     .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
@@ -173,7 +159,7 @@ gulp.task('html', [], function () {
 
 gulp.task('build', ['clean'], function () {
     runSequence(
-        ['scripts:vendor', 'scripts:views', 'images', 'favicon'],
+        ['scripts:vendor', 'scripts:views', 'images', 'favicon', 'styles'],
         'html'
     );
 });
