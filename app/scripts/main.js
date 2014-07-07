@@ -11,7 +11,13 @@
     ]);
 
     module.controller('MainCtrl', function ($scope, $log) {
-        $log.info('Loading Main Controller.');
+
+        /**
+         * Set image url for #preload img tag.
+         * That image tag is monitored to know when images are loaded.
+         */
+        $scope.backgroundImageUrl = angular.element('#slide-1 .bcg').css('background-image');
+        $log.info('Main Controller Loaded.');
     });
 
 })();

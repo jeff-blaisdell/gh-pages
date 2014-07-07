@@ -19,11 +19,11 @@
 </head>
 <body ng-app="jeff-blaisdell.pages.main.app" class="loading">
 
-<div id="preload">
-    <img src="/images/patagonia_huge.jpg">
-</div>
-
 <main ng-controller="MainCtrl">
+
+    <div id="preload">
+        <img ng-src="{{backgroundImageUrl}}">
+    </div>
 
     <page-loader></page-loader>
 
