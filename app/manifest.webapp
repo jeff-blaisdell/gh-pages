@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "name": "Web Starter Kit",
+  "name": "Jeff Blaisdell",
   "launch_path": "/index.html",
-  "description": "A front-end template that helps you build fast, modern mobile web apps.",
+  "description": "A personal bio / resume site.",
   "icons": {
     "60": "/img/touch/touch-icon-60x60.png",
     "128": "/img/touch/touch-icon-128x128.png"
   },
   "developer": {
-    "name": "",
-    "url": ""
+    "name": "Jeff Blaisdell",
+    "url": "http://jeff-blaisdell.github.io"
   },
   "installs_allowed_from": [
     "*"
@@ -19,8 +19,8 @@
   },
   "locales": {
     "en": {
-      "name": "Web Starter Kit",
-      "description": "A front-end template that helps you build fast, modern mobile web apps."
+      "name": "Jeff Blaisdell",
+      "description": "A personal bio / resume site."
     }
   }
 }

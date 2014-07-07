@@ -14,14 +14,8 @@
     left: 4px;
 }
 
-@include medium {
-    .logo-container {
-        left: 10%;
-    }
-}
-
 @include wide {
     .logo-container {
-        left: 20%;
+        left: 17%;
     }
 }

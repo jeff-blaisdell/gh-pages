@@ -54,17 +54,18 @@ main {
 }
 
 .slide-content {
-    padding: 25px 80px;
+    padding: 0px;
 }
 
 /* Slide 1 */
 #slide-1 .bcg {
-    background-image: url('/images/patagonia_1.jpg')
+    background-image: url('/images/patagonia_small.jpg')
 }
 
 #slide-1 .slide-content {
     width: 315px;
-    margin: 80% 3% 0 3%;
+    height: 100%;
+    margin: 70% auto;
     padding: 0px;
 
     h2 {
@@ -73,51 +74,6 @@ main {
     }
 }
 
-/* Slide 2 */
-#slide-2 .bcg {
-    background-color: #FFFFFF;
-}
-
-#slide-2 .slide-content p {
-
-}
-
-#slide-2 {
-    .editorial-header__excerpt {
-        padding: 0 !important;
-        margin-bottom: 25px;
-        text-align: center;
-    }
-}
-
-/* Slide 3 */
-#slide-3 .bcg {
-    background-color: #FFFFFF;
-}
-
-#slide-3 .slide-content {
-
-}
-
-#slide-3 h2 {
-    color: #f2ead6;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-/* Slide 4 */
-#slide-4 .bcg {
-    background-color: #FFFFFF;
-}
-
-#slide-4 .slide-content {
-
-}
-
-#slide-4 h2 {
-    background: none;
-    padding-left: 0;
-    padding-right: 0;
-}
 
 /* ==========================================================================
    End Parallax Scroll Styles
@@ -126,21 +82,31 @@ main {
 
 @include medium {
     #slide-1 .bcg {
-        background-image: url('/images/patagonia_1.jpg')
+        background-image: url('/images/patagonia_medium.jpg')
     }
     #slide-1 .slide-content {
         width: 340px;
-        margin: 35% auto;
+        margin: 50% auto;
     }
 }
 
 @include wide {
     #slide-1 .bcg {
-        background-image: url('/images/patagonia_1.jpg')
+        background-image: url('/images/patagonia_wide.jpg')
     }
     #slide-1 .slide-content {
         width: 540px;
         margin: 35% auto;
+    }
+}
+
+@include huge {
+    #slide-1 .bcg {
+        background-image: url('/images/patagonia_huge.jpg')
+    }
+    #slide-1 .slide-content {
+        width: 540px;
+        margin: 25% auto;
     }
 }
 
