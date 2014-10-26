@@ -59,7 +59,7 @@ main {
 
 /* Slide 1 */
 #slide-1 .bcg {
-    background-image: url('/images/patagonia_small.jpg')
+    background-image: url('/images/patagonia_medium.jpg')
 }
 
 #slide-1 .slide-content {
@@ -71,6 +71,7 @@ main {
     h2 {
         font-family: $fontHighlight;
         text-align: center;
+        padding-top: 4em;
     }
 }
 
@@ -109,6 +110,9 @@ main {
         width: 540px;
         margin: 35% auto;
     }
+    #slide-1 .slide-content h2 {
+        padding-top: 0;
+    }
 }
 
 @include huge {
@@ -118,6 +122,9 @@ main {
     #slide-1 .slide-content {
         width: 540px;
         margin: 25% auto;
+    }
+    #slide-1 .slide-content h2 {
+        padding-top: 0;
     }
 }
 

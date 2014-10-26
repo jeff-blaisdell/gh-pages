@@ -1,6 +1,6 @@
 .logo-container {
     position: relative;
-    bottom: 250px;
+    bottom: 150px;
     left: 0%;
 }
 
@@ -16,6 +16,7 @@
 
 @include wide {
     .logo-container {
+        bottom: 250px;
         left: 17%;
     }
 }
