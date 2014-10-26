@@ -7,23 +7,12 @@
   module.directive('parallax', function($window) {
     return {
       restrict: 'EA',
-      scope: {
-      },
+      scope: {},
       link: function (scope, elem) {
 
         // Setup variables
         var $slides = elem.find('.slide');
         var $body = $('body');
-
-        //FadeIn all sections
-        $body.imagesLoaded( function() {
-          setTimeout(function() {
-            // Resize sections
-            adjustWindow();
-            // Fade in sections
-            $body.removeClass('loading').addClass('loaded');
-          }, 500);
-        });
 
         function adjustWindow(){
 
@@ -68,7 +57,17 @@
 
         }
 
-        angular.element($window).bind('resize', _.throttle(adjustWindow, 200));
+        // Fade in all sections on load.
+        $body.imagesLoaded( function() {
+          // Resize sections
+          adjustWindow();
+
+          // Fade in sections
+          $body.removeClass('loading').addClass('loaded');
+        });
+
+        // Recalc parallax settings on window resize.
+        angular.element($window).bind('resize', _.throttle(adjustWindow, 300));
 
       }
     };
