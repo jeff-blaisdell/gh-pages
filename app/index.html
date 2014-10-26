@@ -25,49 +25,81 @@
         <img ng-src="{{backgroundImageUrl}}">
     </div>
 
-    <page-loader></page-loader>
-
     <parallax>
 
         <section id="slide-1" class="slide">
-            <div class="bcg">
+            <div class="bcg"
+                 data-center="background-position: 50% 0px;"
+                 data-top-bottom="background-position: 50% -100px;"
+                 data-anchor-target="#slide-1">
+
                 <div class="slide-container">
-                    <div class="slide-content cover-slide-content">
+                    <div class="slide-content cover-slide-content"
+                         data-center="bottom: 200px; opacity: 1"
+                         data-top="bottom: 1200px; opacity: 0"
+                         data-anchor-target="#slide-1 .cover">
+
                         <span class="cover">
                           <logo></logo>
                           <h2>What will we create today?</h2>
                         </span>
+
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <section class="about-me">
-            <div class="container clear">
-                <div class="page-header">
-                    <h1 class="xxlarge text-divider">About Me</h1>
-                    <h2>Jeff Blaisdell</h2>
-                </div>
-                <div class="g-wide--1 g-medium--2 g-medium--full box">
-                    <h3>Facts</h3>
-                    <facts></facts>
-                </div>
-                <div class="g-wide--2 me box">
-                    <img class="gravitar" src="http://www.gravatar.com/avatar/5b993ad7e7dfa0122e7405e312c6dfdf?s=400">
-                </div>
-                <div class="g-wide--1 g-wide--last g-medium--full box">
-                    <h3>Skills</h3>
-                    <div class="skills">
-                        <skill name="JavaScript" percentage="80"></skill>
-                        <skill name="HTML / CSS" percentage="78"></skill>
-                        <skill name="Java" percentage="82"></skill>
-                        <skill name="Groovy" percentage="75"></skill>
+        <section id="slide-2" class="slide">
+            <div class="bcg"
+                 data-center="background-position: 50% 0px;"
+                 data-top-bottom="background-position: 50% -100px;"
+                 data-anchor-target="#slide-2">
+
+                <div class="slide-container">
+                    <div class="slide-content cover-slide-content"
+                         data-center="bottom: 200px; opacity: 1"
+                         data-top="bottom: 1200px; opacity: 1"
+                         data-anchor-target="#slide-2 .cover">
+
+                        <span class="cover">
+
+                          <div class="about-me">
+                              <div class="container clear">
+                                  <div class="page-header">
+                                      <h1 class="xxlarge text-divider">About Me</h1>
+                                      <h2>Jeff Blaisdell</h2>
+                                  </div>
+                                  <div class="g-wide--1 g-medium--2 g-medium--full box">
+                                      <h3>Facts</h3>
+                                      <facts></facts>
+                                  </div>
+                                  <div class="g-wide--2 me box">
+                                      <img class="gravitar" src="http://www.gravatar.com/avatar/5b993ad7e7dfa0122e7405e312c6dfdf?s=400">
+                                  </div>
+                                  <div class="g-wide--1 g-wide--last g-medium--full box">
+                                      <h3>Skills</h3>
+                                      <div class="skills">
+                                          <skill name="JavaScript" percentage="80"></skill>
+                                          <skill name="HTML / CSS" percentage="78"></skill>
+                                          <skill name="Java" percentage="82"></skill>
+                                          <skill name="Groovy" percentage="75"></skill>
+                                      </div>
+                                  </div>
+                              </div>
+                              <footer>
+                                  <social-links></social-links>
+                              </footer>
+                          </div>
+
+
+
+                        </span>
+
                     </div>
                 </div>
+
             </div>
-            <footer>
-                <social-links></social-links>
-            </footer>
         </section>
 
     </parallax>
@@ -75,13 +107,14 @@
 </main>
 
 <!-- build:js scripts/main.min.js -->
+<script src="scripts/lib/modernizr.js"></script>
 <script src="scripts/lib/jquery.js"></script>
-<script src="scripts/lib/move.js"></script>
 <script src="scripts/lib/angular.js"></script>
+<script src="scripts/lib/lodash.js"></script>
+<script src="scripts/lib/move.js"></script>
 <script src="scripts/lib/imagesloaded.js"></script>
 <script src="scripts/lib/skrollr.js"></script>
 <script src="scripts/templates.js"></script>
-<script src="scripts/page-loader.js"></script>
 <script src="scripts/social-links.js"></script>
 <script src="scripts/facts.js"></script>
 <script src="scripts/parallax.js"></script>

@@ -6,7 +6,6 @@
         'jeff-blaisdell.components.facts',
         'jeff-blaisdell.components.social-links',
         'jeff-blaisdell.components.parallax',
-        'jeff-blaisdell.components.page-loader',
         'jeff-blaisdell.components.skill'
     ]);
 
@@ -16,8 +15,8 @@
          * Set image url for #preload img tag.
          * That image tag is monitored to know when images are loaded.
          */
-        $scope.backgroundImageUrl = angular.element('#slide-1 .bcg').css('background-image');
-        $log.info('Main Controller Loaded.');
+        var bg = angular.element('#slide-1 .bcg').css('background-image');
+        $scope.backgroundImageUrl = bg.replace('url(','').replace(')','');
     });
 
 })();

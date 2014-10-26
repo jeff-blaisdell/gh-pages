@@ -21,6 +21,8 @@
         "jQuery",
         "_",
         "angular",
-        "move"
+        "move",
+        "skrollr",
+        "Modernizr"
     ]
 }

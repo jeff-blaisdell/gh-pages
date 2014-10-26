@@ -74,6 +74,22 @@ main {
     }
 }
 
+/* Slide 2 */
+#slide-2 .bcg {
+    background-image: none;
+}
+
+#slide-2 .slide-content {
+    h2 {
+        font-family: $fontHighlight;
+        text-align: center;
+    }
+
+    .cover {
+        font-family: $fontHighlight;
+        color: #000000;
+    }
+}
 
 /* ==========================================================================
    End Parallax Scroll Styles
@@ -126,8 +142,7 @@ main {
 }
 
 .about-me {
-    position: relative;
-    height: 800px;
+
 
     .box h3 {
         margin-bottom: 20px;
@@ -135,7 +150,7 @@ main {
     }
 
     footer {
-        margin-top: 100px;
+        margin-top: 60px;
     }
 
     .text-divider.xxlarge {

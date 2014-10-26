@@ -36,7 +36,9 @@ var venderScripts = [
   { 'jquery': [ 'bower_components/jquery/dist/jquery.min.js' ] },
   { 'skrollr': [ 'bower_components/skrollr/dist/skrollr.min.js' ] },
   { 'imagesloaded': [ 'bower_components/imagesloaded/imagesloaded.pkgd.min.js' ] },
-  { 'move': [ 'bower_components/move.js/move.min.js' ] }
+  { 'move': [ 'bower_components/move.js/move.min.js' ] },
+  { 'modernizr': [ 'bower_components/modernizr/modernizr.js' ] },
+  { 'lodash': [ 'bower_components/lodash/dist/lodash.min.js' ] }
 ];
 
 // Prepare vendor scripts.

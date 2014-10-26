@@ -12,7 +12,7 @@
       link: function (scope, elem) {
 
         // Setup variables
-        var $slide = elem.find('.slide');
+        var $slides = elem.find('.slide');
         var $body = $('body');
 
         //FadeIn all sections
@@ -27,21 +27,49 @@
 
         function adjustWindow(){
 
-          // Init Skrollr
+            // Reset slide heights prior to recalc.
+            $slides.height('auto');
 
-          // Get window size
-          var winH = $window.innerHeight;
-          // Keep minimum height 550
-          if(winH <= 550) {
-            winH = 550;
-          }
+            // Get window size
+            var winH = $window.innerHeight;
+            var winW = $window.innerWidth;
 
-          // Resize our slides
-          $slide.height(winH);
+            // Keep minimum height 550
+            if(winH <= 550) {
+                winH = 550;
+            }
 
-          // Refresh Skrollr after resizing our sections
+            // Init Skrollr for 768 and up
+            if( winW >= 768) {
+
+                // Init Skrollr
+                var s = skrollr.init({ forceHeight: false });
+
+                // Resize our slides
+                $slides.each(function(index, slide) {
+                  var $slide = $(slide);
+                  if ($slide.height() < winH) {
+                    $slide.height(winH);
+                  }
+                });
+
+                s.refresh($('.slide'));
+
+            } else {
+                // Destroy Skrollr
+                skrollr.init().destroy();
+            }
+
+            // Check for touch
+            if(Modernizr.touch) {
+                // Destroy Skrollr
+                skrollr.init().destroy();
+            }
 
         }
+
+        angular.element($window).bind('resize', _.throttle(adjustWindow, 200));
+
       }
     };
   });
