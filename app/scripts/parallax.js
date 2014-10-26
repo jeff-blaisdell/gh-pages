@@ -13,8 +13,8 @@
         // Setup variables
         var $slides = elem.find('.slide');
         var $body = $('body');
-        var winH = $window.innerHeight;
-        var winW = $window.innerWidth;
+        var winH;
+        var winW;
 
         function adjustWindow(){
 
