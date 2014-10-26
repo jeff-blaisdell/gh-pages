@@ -13,15 +13,22 @@
         // Setup variables
         var $slides = elem.find('.slide');
         var $body = $('body');
+        var winH = $window.innerHeight;
+        var winW = $window.innerWidth;
 
         function adjustWindow(){
+
+            // Some mobile devices trigger resize on scroll.
+            if (winW === $window.innerWidth) {
+              return;
+            }
 
             // Reset slide heights prior to recalc.
             $slides.height('auto');
 
             // Get window size
-            var winH = $window.innerHeight;
-            var winW = $window.innerWidth;
+            winH = $window.innerHeight;
+            winW = $window.innerWidth;
 
             // Keep minimum height 550
             if(winH <= 550) {
